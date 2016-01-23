@@ -43,5 +43,3 @@ config :dodo_server, DodoServer.Repo,
 
 config :guardian, Guardian,
   secret_key: "supersecretkey"
-
-import_config "dev.secret.exs"

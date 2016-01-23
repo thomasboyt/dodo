@@ -11,6 +11,8 @@ defmodule DodoServer.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug Guardian.Plug.VerifyHeader
+    plug Guardian.Plug.LoadResource
   end
 
   scope "/", DodoServer do
@@ -20,7 +22,12 @@ defmodule DodoServer.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", DodoServer do
-  #   pipe_through :api
-  # end
+  scope "/api", DodoServer do
+    pipe_through :api
+
+    post "/accounts", RegistrationController, :create
+
+    # post "/sessions", SessionController, :create
+    # delete "/sessions", SessionController, :delete
+  end
 end

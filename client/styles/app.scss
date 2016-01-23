@@ -1,1 +1,9 @@
-body { color: purple }
+@import '~bootstrap/scss/bootstrap';
+
+a {
+  cursor: pointer;
+}
+
+body {
+  margin-top: 20px;
+}

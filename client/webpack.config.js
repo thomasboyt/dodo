@@ -28,7 +28,7 @@ export default function generateConfig(environment) {
     devServer: {
       proxy: {
         '/api/*': {
-          target: 'localhost:4000'
+          target: 'http://localhost:4000'
         }
       }
     }

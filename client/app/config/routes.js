@@ -8,13 +8,13 @@ import {Route, IndexRoute} from 'react-router';
 import App from '../views/App';
 
 export default (
-  <Route handler={App}>
+  <Route component={App}>
 
     <Route
       path="/"
       component={require('../views/AuthenticatedWrapper').default}>
 
-      <IndexRoute component={require('../views/Home/Handler').default}>
+      <IndexRoute component={require('../views/Home/Handler').default} />
 
     </Route>
 

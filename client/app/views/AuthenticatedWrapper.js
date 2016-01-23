@@ -7,11 +7,12 @@ const AuthenticatedWrapper = React.createClass({
     if (localStorage.getItem('authToken')) {
       // this.props.dispatch(getCurrentUser());
     } else {
-      this.props.dispatch(routeActions.push('/log-in'));
+      this.props.dispatch(routeActions.replace('/log-in'));
     }
   },
 
   render() {
+    return this.props.children;
   }
 });
 

@@ -3,7 +3,11 @@
  */
 
 import thunkMiddleware from 'redux-thunk';
+import {syncHistory} from 'redux-simple-router';
+
+import history from './history';
 
 export default [
-  thunkMiddleware
+  thunkMiddleware,
+  syncHistory(history)
 ];
